@@ -20,13 +20,16 @@ public class TesteArrayDeReferencias {
 		
 		Cliente cliente = new Cliente();
 		referencias[2] = cliente;
-		
 		System.out.println(cc1);
 		System.out.println(referencias[0]);
 //		System.out.println(referencias[1].getNumero());
 		
 		ContaCorrente ref = (ContaCorrente) referencias[0]; //type cast
 		System.out.println(ref);
+		
+		for(int i = 0; i < args.length; i++) {
+			System.out.println(args[i]);
+		}
 	}
 
 }
