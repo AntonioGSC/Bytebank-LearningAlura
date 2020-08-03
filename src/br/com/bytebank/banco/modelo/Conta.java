@@ -7,7 +7,7 @@ package br.com.bytebank.banco.modelo;
  *
  */
 
-public abstract class Conta {
+public abstract class Conta extends Object{
 	protected double saldo;
 	private int agencia;
 	private int numero;
@@ -88,5 +88,11 @@ public abstract class Conta {
 	
 	public static int getTotal() {
 		return Conta.total;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Numero: " + this.numero + ", Agencia: " +this.getAgencia();
 	}
 }

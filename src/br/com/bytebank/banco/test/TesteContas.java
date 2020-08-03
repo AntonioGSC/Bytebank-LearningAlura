@@ -8,7 +8,7 @@ public class TesteContas {
 
 	public static void main(String[] args) throws SaldoInsuficienteException{
 		// TODO Auto-generated method stub
-		ContaCorrente cc = new ContaCorrente(111, 111);
+		ContaCorrente cc = new ContaCorrente(111, 111, 111);
 		cc.deposita(100.00);
 		
 		ContaPoupanca cp = new ContaPoupanca(222, 222);
@@ -18,6 +18,10 @@ public class TesteContas {
 		
 		System.out.println(cc.getSaldo());
 		System.out.println(cp.getSaldo());
+		System.out.println(cc);
+		System.out.println(cp);
+		cc.setNumero(213141);
+		System.out.println(cc);
 	}
 
 }
