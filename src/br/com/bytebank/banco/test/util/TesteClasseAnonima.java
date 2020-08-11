@@ -3,15 +3,13 @@ package br.com.bytebank.banco.test.util;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
 
 import br.com.bytebank.banco.modelo.Cliente;
 import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
-import br.com.bytebank.banco.modelo.Tributavel;
 
-public class Teste {
+public class TesteClasseAnonima {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -45,17 +43,21 @@ public class Teste {
         lista.add(cc3);
         lista.add(cc4);
         
-        lista.sort((c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()));
+        lista.sort(new Comparator<Conta>() { //classe anonima
+        	@Override
+        	public int compare(Conta c1, Conta c2) { 
+        		return Integer.compare(c1.getNumero(), c2.getNumero());
+        	}
+        });
 
-
-        Comparator<Conta> comp = (Conta c1, Conta c2) -> {
+        Comparator<Conta> comp = new Comparator<Conta>() {
+        	@Override
+        	public int compare(Conta c1, Conta c2) {
         		String nomeC1 = c1.getTitular().getNome();
         		String nomeC2 = c2.getTitular().getNome();
         		return nomeC1.compareTo(nomeC2);
+        	}
         };
-        
-        lista.forEach((Conta conta) -> System.out.println(conta + ", " + conta.getTitular().getNome()));
-
         for (Conta conta : lista) {
                 System.out.println(conta + ", " + conta.getTitular().getNome());
         }
