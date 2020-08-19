@@ -46,8 +46,7 @@ public class Teste {
         lista.add(cc4);
         
         lista.sort((c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()));
-
-
+     
         Comparator<Conta> comp = (Conta c1, Conta c2) -> {
         		String nomeC1 = c1.getTitular().getNome();
         		String nomeC2 = c2.getTitular().getNome();
@@ -60,7 +59,6 @@ public class Teste {
                 System.out.println(conta + ", " + conta.getTitular().getNome());
         }
 	}
-
 }
 
 

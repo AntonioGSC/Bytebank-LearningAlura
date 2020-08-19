@@ -25,11 +25,11 @@ public class TesteArrayList {
 		
 		System.out.println(ref.getValorImposto());
 		
-//		lista.remove(0);
+		lista.remove(0);
 		
 		System.out.println(lista.size());
 		
-//  	ref = (Conta) lista.get(0);
+		ref = (ContaCorrente) lista.get(0);
 		
 		System.out.println(ref.getNumero());
 		
